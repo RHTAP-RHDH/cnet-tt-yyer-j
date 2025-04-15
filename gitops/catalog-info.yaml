@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: cnet-tt-yyer-j-gitops
+  description: This is GitOps manifest for cnet-tt-yyer-j   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=cnet-tt-yyer-j
+    backstage.io/kubernetes-id: cnet-tt-yyer-j 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: cnet-tt-yyer-j
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:cnet-tt-yyer-j
